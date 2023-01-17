@@ -23,8 +23,8 @@ else
   exit 1
 fi
 
-gfortran -cpp -E -dM test/hw.f90
-gfortran test/hw.f90 -o hw
+gfortran -cpp -E -dM test/hw.F90
+gfortran test/hw.F90 -o hw
 echo "Compile succeeded"
 
 output=$(./hw '2>&1')
