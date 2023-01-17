@@ -23,6 +23,7 @@ else
   exit 1
 fi
 
+gfortran -cpp -E -dM test/hw.f90
 gfortran test/hw.f90 -o hw
 echo "Compile succeeded"
 
@@ -35,6 +36,6 @@ else
   exit 1
 fi
 
-gfortran --version
-cmake -E touch foo.f90
-gfortran -cpp -E -dM foo.f90
+#gfortran --version
+#cmake -E touch foo.f90
+#gfortran -cpp -E -dM foo.f90

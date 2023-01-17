@@ -5,7 +5,8 @@ if ((get-command "gfortran" -ErrorAction SilentlyContinue) -eq $null) {
     write-output "Command gfortran found"
 }
 
-gfortran test/hw.f90 -o hw
+gfortran -cpp -E -dM test/hw.f90
+gfortran test/hw.F90 -o hw
 write-output "Compile succeeded"
 
 $output=$(./hw)
@@ -16,6 +17,6 @@ if ($output -match "hello world") {
     exit 1
 }
 
-gfortran --version
-cmake -E touch foo.f90
-gfortran -cpp -E -dM foo.f90
+#gfortran --version
+#cmake -E touch foo.f90
+#gfortran -cpp -E -dM foo.f90
