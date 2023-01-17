@@ -15,3 +15,7 @@ if ($output -match "hello world") {
     write-output "Unexpected output: $output"
     exit 1
 }
+
+gfortran --version
+cmake -E touch foo.f90
+gfortran -cpp -E -dM foo.f90
